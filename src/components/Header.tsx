@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { MenuIcon, XIcon } from 'lucide-react'
 import { useLanguage } from './LanguageProvider'
-import Head from 'next/head'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -35,21 +34,18 @@ export default function Header() {
   const navItems = texts[lang].nav
 
   return (
-    <>
-      <Head>
-        <title>Portfolio KEVIN</title>
-      </Head>
-      <motion.header 
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700"
-      >
+    <motion.div
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className="fixed top-0 left-0 right-0 z-50 glass border-b border-blue-200 shadow-lg"
+      as="header"
+    >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <motion.div 
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold text-white"
+              className="text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent"
             >
               {texts[lang].logo}
             </motion.div>
@@ -61,9 +57,12 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   whileHover={{ y: -2 }}
-                  className="text-slate-300 hover:text-white transition-colors"
+                  className="relative text-gray-600 hover:text-blue-600 transition-colors font-semibold group"
                 >
                   {item.name}
+                  <motion.span
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-green-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"
+                  />
                 </motion.a>
               ))}
             </nav>
@@ -71,19 +70,23 @@ export default function Header() {
             {/* Lang Switcher & Mobile Menu Button */}
             <div className="flex items-center space-x-4">
               {/* Lang Switcher */}
-              <button
+              <motion.button
                 onClick={() => setLang(lang === 'fr' ? 'en' : 'fr')}
-                className="p-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors font-semibold"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-2 rounded-xl bg-gradient-to-r from-blue-100 to-green-100 text-blue-600 hover:from-blue-200 hover:to-green-200 transition-all font-bold shadow-md hover:shadow-lg"
               >
                 {lang === 'fr' ? 'FR' : 'EN'}
-              </button>
+              </motion.button>
               {/* Mobile Menu Button */}
-              <button
+              <motion.button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="md:hidden p-2 rounded-xl bg-gradient-to-r from-blue-100 to-green-100 text-blue-600 hover:from-blue-200 hover:to-green-200 transition-all shadow-md hover:shadow-lg"
               >
                 {isMenuOpen ? <XIcon size={20} /> : <MenuIcon size={20} />}
-              </button>
+              </motion.button>
             </div>
           </div>
 
@@ -93,7 +96,7 @@ export default function Header() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="md:hidden py-4 border-t border-slate-700"
+              className="md:hidden py-4 border-t border-blue-200"
             >
               <nav className="flex flex-col space-y-4">
                 {navItems.map((item) => (
@@ -101,7 +104,7 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-slate-300 hover:text-white transition-colors"
+                    className="text-gray-600 hover:text-blue-600 transition-colors"
                   >
                     {item.name}
                   </a>
@@ -110,7 +113,6 @@ export default function Header() {
             </motion.div>
           )}
         </div>
-      </motion.header>
-    </>
+    </motion.div>
   )
 } 

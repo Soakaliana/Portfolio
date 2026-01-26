@@ -144,7 +144,7 @@ export default function Skills() {
         { ...texts[lang].categories[1].skills[2], icon: <SiJavascript className="text-[#f7df1e]" size={24} /> },
         { ...texts[lang].categories[1].skills[3], icon: <SiReact className="text-[#61dafb]" size={24} /> },
         { ...texts[lang].categories[1].skills[4], icon: <SiVuedotjs className="text-[#42b883]" size={24} /> },
-        { ...texts[lang].categories[1].skills[5], icon: <SiNextdotjs className="text-black dark:text-white" size={24} /> },
+        { ...texts[lang].categories[1].skills[5], icon: <SiNextdotjs className="text-gray-800" size={24} /> },
         { ...texts[lang].categories[1].skills[6], icon: <SiTailwindcss className="text-[#38bdf8]" size={24} /> },
       ]
     },
@@ -173,21 +173,38 @@ export default function Skills() {
   ]
 
   return (
-    <section id="skills" className="py-20 bg-slate-50 dark:bg-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="relative py-20 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-20 right-0 w-96 h-96 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-0"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
-            {texts[lang].title}
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded mx-auto mb-6"></div>
-          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-5xl font-extrabold text-gray-800 mb-6 relative inline-block"
+          >
+            <span className="relative">
+              {texts[lang].title}
+              <motion.span
+                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-600 to-green-500 rounded-full"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              />
+            </span>
+          </motion.h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             {texts[lang].desc}
           </p>
         </motion.div>
@@ -197,42 +214,47 @@ export default function Skills() {
           {skillCategories.map((category: SkillCategory, categoryIndex: number) => (
             <motion.div
               key={category.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.1, type: "spring" }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg"
+              whileHover={{ y: -8 }}
+              className="group bg-white rounded-2xl p-8 shadow-xl border-2 border-blue-100 hover:border-blue-300 transition-all card-hover relative overflow-hidden"
             >
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-green-50/0 group-hover:from-blue-50/50 group-hover:to-green-50/50 transition-all duration-300 -z-0"></div>
+              
               {/* Category Header */}
-              <div className="flex items-center space-x-3 mb-6">
-                <h3 className="text-xl font-semibold text-slate-900 dark:text-white flex items-center gap-2">
-                  <span className="inline-flex items-center justify-center">
-                    <category.icon size={28} className="inline-block text-blue-600 dark:text-blue-400" />
-                  </span>
+              <div className="flex items-center space-x-4 mb-8 relative z-10">
+                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-100 to-green-100 shadow-lg group-hover:scale-110 transition-transform">
+                  <category.icon size={32} className="text-blue-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800">
                   {category.title}
                 </h3>
               </div>
 
               {/* Skills List */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 relative z-10">
                 {category.skills.map((skill: Skill, skillIndex: number) => (
                   <motion.div
                     key={skill.name}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: skillIndex * 0.1 }}
+                    transition={{ duration: 0.4, delay: skillIndex * 0.05 }}
                     viewport={{ once: true }}
-                    className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4 hover:shadow-md transition-shadow"
+                    whileHover={{ scale: 1.05, y: -3 }}
+                    className="group/skill bg-gradient-to-br from-blue-50 to-white rounded-xl p-5 shadow-md hover:shadow-xl transition-all border border-blue-100 hover:border-blue-300 cursor-pointer"
                   >
-                    <div className="flex items-center space-x-3 mb-2">
-                      <div className="flex-shrink-0">
+                    <div className="flex items-center space-x-3 mb-3">
+                      <div className="flex-shrink-0 p-2 rounded-lg bg-white shadow-sm group-hover/skill:scale-110 transition-transform">
                         {skill.icon}
                       </div>
-                      <span className="font-semibold text-slate-900 dark:text-white">
+                      <span className="font-bold text-gray-800 group-hover/skill:text-blue-600 transition-colors">
                         {skill.name}
                       </span>
                     </div>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                    <p className="text-sm text-gray-600 leading-relaxed">
                       {skill.description}
                     </p>
                   </motion.div>

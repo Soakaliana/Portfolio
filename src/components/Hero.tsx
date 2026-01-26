@@ -73,33 +73,71 @@ export default function Hero() {
   ]
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, type: "spring" }}
+            className="mb-8"
+          >
+            <div className="inline-block p-3 rounded-full bg-gradient-to-r from-blue-100 to-green-100 mb-6 shadow-lg">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-green-500 flex items-center justify-center shadow-xl">
+                <span className="text-3xl">👨‍💻</span>
+              </div>
+            </div>
+          </motion.div>
+          
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg"
+            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-gray-800 mb-6 drop-shadow-lg"
           >
-            <span className="bg-gradient-to-r from-[#a18cd1] via-[#fbc2eb] to-[#fad0c4] bg-clip-text text-transparent">
-              {displayedName}
-              {isTyping ? <span className="animate-pulse text-pink-300">|</span> : null}
+            <span className="relative inline-block">
+              <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-green-500 bg-clip-text text-transparent animate-gradient">
+                {displayedName}
+              </span>
+              {isTyping ? (
+                <motion.span 
+                  className="inline-block text-blue-500 ml-2"
+                  animate={{ opacity: [1, 0] }}
+                  transition={{ duration: 0.8, repeat: Infinity }}
+                >
+                  |
+                </motion.span>
+              ) : null}
             </span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl text-blue-700 dark:text-blue-400 font-semibold mb-2"
+            className="text-2xl sm:text-3xl text-blue-600 font-bold mb-4 relative"
           >
-            {texts[lang].subtitle}
+            <span className="relative inline-block">
+              {texts[lang].subtitle}
+              <motion.span
+                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-green-500 rounded-full"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              />
+            </span>
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             {texts[lang].description}
           </motion.p>
@@ -107,25 +145,38 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
           >
             <motion.a
               href="/CV%20%20KEVIN%20Annop%20Soraya.pdf"
               download
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 hover:shadow-lg transition-shadow"
+              className="group relative bg-gradient-to-r from-blue-600 to-green-500 text-white px-10 py-4 rounded-xl font-bold text-lg flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all overflow-hidden"
             >
-              <Download size={20} />
-              Télécharger CV
+              <span className="absolute inset-0 bg-gradient-to-r from-green-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+              <Download size={20} className="relative z-10" />
+              <span className="relative z-10">Télécharger CV</span>
+              <motion.div
+                className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20"
+                initial={{ x: '-100%' }}
+                whileHover={{ x: '100%' }}
+                transition={{ duration: 0.6 }}
+              />
             </motion.a>
             <motion.a
               href="#contact"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+              className="group relative border-2 border-blue-400 text-gray-700 px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all overflow-hidden backdrop-blur-sm bg-white/50"
             >
-              Me contacter
+              <span className="relative z-10">Me contacter</span>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-blue-100 to-green-100 opacity-0 group-hover:opacity-100 -z-0"
+                initial={{ scale: 0 }}
+                whileHover={{ scale: 1 }}
+                transition={{ duration: 0.3 }}
+              />
             </motion.a>
           </motion.div>
           <motion.div
@@ -134,28 +185,37 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex justify-center space-x-6"
           >
-            {socialLinks.map((social) => {
+            {socialLinks.map((social, index) => {
               const extraProps = social.isExternal
                 ? { target: '_blank', rel: 'noopener noreferrer' }
                 : {}
-              // Icône GitHub en blanc pur, fond transparent
+              // Icônes avec couleurs SOA
               const isGithub = social.label === 'GitHub'
               const iconStyle = isGithub
-                ? { color: '#fff' }
-                : { color: social.color }
-              // Bouton toujours transparent
-              const buttonClass = 'p-4 rounded-full bg-transparent transition-all flex items-center justify-center'
+                ? { color: '#1e293b' }
+                : social.label === 'Email'
+                ? { color: '#3b82f6' }
+                : { color: '#10b981' }
               return (
                 <motion.a
                   key={social.label}
                   href={social.href}
                   {...extraProps}
-                  whileHover={{ scale: 1.12 }}
-                  whileTap={{ scale: 0.96 }}
-                  className={buttonClass}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 + index * 0.1 }}
+                  whileHover={{ scale: 1.15, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative p-4 rounded-full bg-white/80 backdrop-blur-sm border-2 border-blue-200 shadow-lg hover:shadow-xl transition-all"
                   aria-label={social.label}
                 >
-                  <social.icon size={32} style={iconStyle} />
+                  <social.icon size={28} style={iconStyle} className="relative z-10" />
+                  <motion.div
+                    className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-100 to-green-100 opacity-0 group-hover:opacity-100"
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
                 </motion.a>
               )
             })}
