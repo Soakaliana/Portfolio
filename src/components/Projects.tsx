@@ -110,8 +110,8 @@ export default function Projects() {
   return (
     <section id="projects" className="relative py-20 bg-white overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-0"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-0"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-cv-muted rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-0"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cv-muted rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-0"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -127,12 +127,12 @@ export default function Projects() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-5xl font-extrabold text-gray-800 mb-6 relative inline-block"
+            className="text-5xl font-extrabold text-black mb-6 relative inline-block"
           >
             <span className="relative">
               {texts[lang].title}
               <motion.span
-                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-600 to-green-500 rounded-full"
+                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-black rounded-full"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -140,7 +140,7 @@ export default function Projects() {
               />
             </span>
           </motion.h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-black/60 max-w-2xl mx-auto leading-relaxed">
             {texts[lang].desc}
           </p>
         </motion.div>
@@ -156,21 +156,21 @@ export default function Projects() {
                 transition={{ duration: 0.6, delay: index * 0.1, type: "spring" }}
                 viewport={{ once: true }}
                 whileHover={{ y: -12 }}
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all border-2 border-blue-100 hover:border-blue-300 card-hover"
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all border-2 border-black/10 hover:border-black/25 card-hover"
               >
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-green-50/0 group-hover:from-blue-50/30 group-hover:to-green-50/30 transition-all duration-300 -z-0"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-transparent group-hover:from-cv-muted/50 group-hover:to-cv-muted/30 transition-all duration-300 -z-0"></div>
                 
                 {/* Project Image */}
-                <div className="relative h-64 bg-gradient-to-br from-blue-100 to-green-100 flex items-center justify-center overflow-hidden">
+                <div className="relative h-64 bg-gradient-to-br from-cv-muted to-white flex items-center justify-center overflow-hidden">
                   {project.images ? (
                     <ProjectSlider images={project.images} heightClass="h-64" />
                   ) : (
-                    <project.icon size={80} className="text-blue-600 opacity-80" />
+                    <project.icon size={80} className="text-black opacity-80" />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent group-hover:from-black/10 transition-all"></div>
                   <div className="absolute top-4 right-4">
-                    <span className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-bold text-blue-600 shadow-lg">
+                    <span className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-bold text-black shadow-lg">
                       {project.category}
                     </span>
                   </div>
@@ -179,7 +179,7 @@ export default function Projects() {
                 {/* Project Content */}
                 <div className="p-8 relative z-10">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-2xl font-bold text-black group-hover:underline transition-colors">
                       {project.title}
                     </h3>
                     <div className="flex space-x-2">
@@ -187,7 +187,7 @@ export default function Projects() {
                         href={project.github}
                         whileHover={{ scale: 1.15, rotate: 5 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-3 rounded-xl bg-blue-100 text-gray-800 hover:bg-blue-200 transition-all shadow-md hover:shadow-lg"
+                        className="p-3 rounded-xl bg-cv-muted text-black hover:bg-black/10 transition-all shadow-md hover:shadow-lg"
                       >
                         <Github size={18} />
                       </motion.a>
@@ -195,14 +195,14 @@ export default function Projects() {
                         href={project.live}
                         whileHover={{ scale: 1.15, rotate: -5 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-3 rounded-xl bg-green-100 text-gray-800 hover:bg-green-200 transition-all shadow-md hover:shadow-lg"
+                        className="p-3 rounded-xl bg-cv-muted text-black hover:bg-black/15 transition-all shadow-md hover:shadow-lg"
                       >
                         <ExternalLink size={18} />
                       </motion.a>
                     </div>
                   </div>
 
-                  <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed">
+                  <p className="text-black/60 mb-6 line-clamp-3 leading-relaxed">
                     {project.description}
                   </p>
 
@@ -212,7 +212,7 @@ export default function Projects() {
                       <motion.span
                         key={tech}
                         whileHover={{ scale: 1.1 }}
-                        className="px-4 py-2 bg-gradient-to-r from-blue-100 to-green-100 text-blue-700 text-sm font-semibold rounded-full border border-blue-200 shadow-sm"
+                        className="px-4 py-2 bg-gradient-to-r from-cv-muted to-white text-black text-sm font-semibold rounded-full border border-black/15 shadow-sm"
                       >
                         {tech}
                       </motion.span>
@@ -226,7 +226,7 @@ export default function Projects() {
 
         {/* All Projects Grid */}
         <div id="all-projects">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-8">
+          <h3 className="text-2xl font-semibold text-black mb-8">
             {texts[lang].all}
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -238,20 +238,20 @@ export default function Projects() {
                 transition={{ duration: 0.6, delay: index * 0.1, type: "spring" }}
                 viewport={{ once: true }}
                 whileHover={{ y: -8 }}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border-2 border-blue-100 hover:border-blue-300 card-hover relative"
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border-2 border-black/10 hover:border-black/25 card-hover relative"
               >
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-green-50/0 group-hover:from-blue-50/30 group-hover:to-green-50/30 transition-all duration-300 -z-0"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-transparent group-hover:from-cv-muted/50 group-hover:to-cv-muted/30 transition-all duration-300 -z-0"></div>
                 {/* Project Image */}
-                <div className="relative h-48 bg-gradient-to-br from-blue-100 to-green-100 flex items-center justify-center overflow-hidden">
+                <div className="relative h-48 bg-gradient-to-br from-cv-muted to-white flex items-center justify-center overflow-hidden">
                   {project.images ? (
                     <ProjectSlider images={project.images} heightClass="h-48" />
                   ) : (
-                    <project.icon size={60} className="text-blue-600 opacity-80" />
+                    <project.icon size={60} className="text-black opacity-80" />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent group-hover:from-black/10 transition-all"></div>
                   <div className="absolute top-3 right-3">
-                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-blue-600 shadow-md">
+                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-black shadow-md">
                       {project.category}
                     </span>
                   </div>
@@ -260,7 +260,7 @@ export default function Projects() {
                 {/* Project Content */}
                 <div className="p-6 relative z-10">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-lg font-bold text-gray-800 group-hover:text-blue-600 transition-colors flex-1">
+                    <h3 className="text-lg font-bold text-black group-hover:underline transition-colors flex-1">
                       {project.title}
                     </h3>
                     <div className="flex space-x-2">
@@ -268,7 +268,7 @@ export default function Projects() {
                         href={project.github}
                         whileHover={{ scale: 1.2, rotate: 5 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-2 rounded-lg bg-blue-100 text-gray-800 hover:bg-blue-200 transition-all shadow-sm"
+                        className="p-2 rounded-lg bg-cv-muted text-black hover:bg-black/10 transition-all shadow-sm"
                       >
                         <Github size={16} />
                       </motion.a>
@@ -277,7 +277,7 @@ export default function Projects() {
                         onClick={e => { e.preventDefault(); setSelectedProject(project); }}
                         whileHover={{ scale: 1.2, rotate: -5 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-2 rounded-lg bg-blue-100 text-gray-800 hover:bg-blue-200 transition-all shadow-sm"
+                        className="p-2 rounded-lg bg-cv-muted text-black hover:bg-black/10 transition-all shadow-sm"
                         aria-label={texts[lang].detail}
                       >
                         <Expand size={16} />
@@ -289,7 +289,7 @@ export default function Projects() {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.15 }}
                           whileTap={{ scale: 0.9 }}
-                          className="px-3 py-2 rounded-lg bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 transition-all font-bold text-xs shadow-md"
+                          className="px-3 py-2 rounded-lg bg-black text-white hover:bg-black/90 transition-all font-bold text-xs shadow-md"
                           aria-label="Voir la démo du projet"
                         >
                           Demo
@@ -298,7 +298,7 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <p className="text-gray-600 mb-4 line-clamp-3 text-sm leading-relaxed">
+                  <p className="text-black/60 mb-4 line-clamp-3 text-sm leading-relaxed">
                     {project.description}
                   </p>
 
@@ -308,7 +308,7 @@ export default function Projects() {
                       <motion.span
                         key={tech}
                         whileHover={{ scale: 1.1 }}
-                        className="px-3 py-1 bg-gradient-to-r from-blue-100 to-green-100 text-blue-700 text-xs font-semibold rounded-full border border-blue-200"
+                        className="px-3 py-1 bg-gradient-to-r from-cv-muted to-white text-black text-xs font-semibold rounded-full border border-black/15"
                       >
                         {tech}
                       </motion.span>
@@ -331,7 +331,7 @@ export default function Projects() {
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative bg-gradient-to-r from-blue-600 to-green-500 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all overflow-hidden"
+            className="group relative bg-black text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all overflow-hidden"
             onClick={() => {
               const el = document.getElementById('all-projects')
               if (el) el.scrollIntoView({ behavior: 'smooth' })
@@ -339,7 +339,7 @@ export default function Projects() {
           >
             <span className="relative z-10">{texts[lang].seeAll}</span>
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-green-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute inset-0 bg-white opacity-0 group-hover:opacity-15 transition-opacity"
               initial={{ x: '-100%' }}
               whileHover={{ x: '100%' }}
               transition={{ duration: 0.6 }}
@@ -350,26 +350,26 @@ export default function Projects() {
       {selectedProject && (
         <div className="fixed inset-0 z-50 bg-black/80 flex flex-col items-center justify-center overflow-y-auto p-8" style={{maxHeight:'100vh'}}>
           <button onClick={() => setSelectedProject(null)} className="self-end mb-4 text-white text-3xl font-bold" aria-label={texts[lang].close}>&times;</button>
-          <div className="w-full max-w-3xl bg-white rounded-xl shadow-lg p-8 flex flex-col gap-8 items-center border border-blue-200">
+          <div className="w-full max-w-3xl bg-white rounded-xl shadow-lg p-8 flex flex-col gap-8 items-center border border-black/10">
             <div className="w-full">
               {selectedProject.images ? (
                 <ProjectSlider images={selectedProject.images} heightClass="h-64" />
               ) : (
-                <selectedProject.icon size={80} className="text-blue-600 mb-4" />
+                <selectedProject.icon size={80} className="text-black mb-4" />
               )}
             </div>
             <div className="w-full space-y-3">
-              <h3 className="text-2xl font-bold text-gray-800">{selectedProject.title}</h3>
-              <div className="text-sm text-gray-600 mb-2">{selectedProject.period || texts[lang].noPeriod}</div>
-              <p className="text-base text-gray-700 mb-2">{selectedProject.description}</p>
+              <h3 className="text-2xl font-bold text-black">{selectedProject.title}</h3>
+              <div className="text-sm text-black/60 mb-2">{selectedProject.period || texts[lang].noPeriod}</div>
+              <p className="text-base text-black/80 mb-2">{selectedProject.description}</p>
               <div className="flex flex-wrap gap-2 mb-2">
                 {selectedProject.technologies && selectedProject.technologies.map((tech: string) => (
-                  <span key={tech} className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">{tech}</span>
+                  <span key={tech} className="px-3 py-1 bg-cv-muted text-black text-sm rounded-full border border-black/10">{tech}</span>
                 ))}
               </div>
               <div className="flex gap-3 mt-2">
-                {selectedProject.github && <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">{texts[lang].github}</a>}
-                {selectedProject.live && <a href={selectedProject.live} target="_blank" rel="noopener noreferrer" className="text-green-600 underline">{texts[lang].demo}</a>}
+                {selectedProject.github && <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="text-black underline">{texts[lang].github}</a>}
+                {selectedProject.live && <a href={selectedProject.live} target="_blank" rel="noopener noreferrer" className="text-black underline">{texts[lang].demo}</a>}
               </div>
             </div>
           </div>

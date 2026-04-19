@@ -79,7 +79,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 to-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-cv-muted to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -89,11 +89,11 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500 mb-4">
+          <h2 className="text-4xl font-extrabold text-black mb-4">
             {texts[lang].title}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-500 rounded-full mx-auto mb-6 shadow-lg"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-black rounded-full mx-auto mb-6 shadow-lg"></div>
+          <p className="text-lg text-black/60 max-w-2xl mx-auto">
             {texts[lang].desc}
           </p>
         </motion.div>
@@ -108,10 +108,10 @@ export default function Contact() {
         >
           {/* Contact Info Card */}
           <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-6">
+            <h3 className="text-2xl font-semibold text-black mb-6">
               {texts[lang].infoTitle}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-black/60 mb-6">
               {texts[lang].infoDesc}
             </p>
             <motion.div
@@ -119,7 +119,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl border border-blue-200 transition-all space-y-6"
+              className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl border border-black/10 transition-all space-y-6"
             >
               {contactInfo.map((info) => (
                 <a
@@ -129,12 +129,12 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center space-x-4"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center shadow-lg">
                     <info.icon size={28} className="text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-800">{info.title}</h4>
-                    <p className="text-gray-600">{info.value}</p>
+                    <h4 className="font-semibold text-black">{info.title}</h4>
+                    <p className="text-black/60">{info.value}</p>
                   </div>
                 </a>
               ))}
@@ -147,9 +147,9 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white rounded-3xl p-8 shadow-2xl border border-blue-200"
+            className="bg-white rounded-3xl p-8 shadow-2xl border border-black/10"
           >
-            <h3 className="text-2xl font-semibold text-gray-800 mb-6">
+            <h3 className="text-2xl font-semibold text-black mb-6">
               {texts[lang].formTitle}
             </h3>
 
@@ -182,7 +182,7 @@ export default function Contact() {
             >
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="firstName" className="block text-sm font-medium text-black/80 mb-2">
                     {texts[lang].firstName}
                   </label>
                   <input
@@ -190,12 +190,12 @@ export default function Contact() {
                     id="firstName"
                     name="firstName"
                     required
-                    className="w-full px-5 py-3 border border-blue-200 rounded-2xl bg-blue-50 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
+                    className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-black focus:outline-none transition-all shadow-sm"
                     placeholder={texts[lang].placeholderFirstName}
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="lastName" className="block text-sm font-medium text-black/80 mb-2">
                     {texts[lang].lastName}
                   </label>
                   <input
@@ -203,13 +203,13 @@ export default function Contact() {
                     id="lastName"
                     name="lastName"
                     required
-                    className="w-full px-5 py-3 border border-blue-200 rounded-2xl bg-blue-50 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
+                    className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-black focus:outline-none transition-all shadow-sm"
                     placeholder={texts[lang].placeholderLastName}
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-black/80 mb-2">
                   {texts[lang].email}
                 </label>
                 <input
@@ -217,12 +217,12 @@ export default function Contact() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-5 py-3 border border-blue-200 rounded-2xl bg-blue-50 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
+                  className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-black focus:outline-none transition-all shadow-sm"
                   placeholder={texts[lang].placeholderEmail}
                 />
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-black/80 mb-2">
                   {texts[lang].subject}
                 </label>
                 <input
@@ -230,12 +230,12 @@ export default function Contact() {
                   id="subject"
                   name="subject"
                   required
-                  className="w-full px-5 py-3 border border-blue-200 rounded-2xl bg-blue-50 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
+                  className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-black focus:outline-none transition-all shadow-sm"
                   placeholder={texts[lang].placeholderSubject}
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-black/80 mb-2">
                   {texts[lang].message}
                 </label>
                 <textarea
@@ -243,22 +243,22 @@ export default function Contact() {
                   name="message"
                   rows={5}
                   required
-                  className="w-full px-5 py-3 border border-blue-200 rounded-2xl bg-blue-50 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all shadow-sm"
+                  className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-black focus:outline-none transition-all shadow-sm"
                   placeholder={texts[lang].placeholderMessage}
                 />
               </div>
               <button
                 type="submit"
-                className="w-full py-4 px-8 bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-2xl font-semibold text-lg shadow-lg hover:from-blue-700 hover:to-green-600 transition-all"
+                className="w-full py-4 px-8 bg-black text-white rounded-2xl font-semibold text-lg shadow-lg hover:bg-black/90 transition-all"
                 disabled={status === 'sending'}
               >
                 {status === 'sending' ? texts[lang].sending : texts[lang].send}
               </button>
               {status === 'success' && (
-                <p className="text-green-400 text-center mt-4">{texts[lang].success}</p>
+                <p className="text-black font-medium text-center mt-4 border border-black/15 rounded-xl py-3 px-4 bg-cv-muted">{texts[lang].success}</p>
               )}
               {status === 'error' && (
-                <p className="text-red-400 text-center mt-4">{texts[lang].error}</p>
+                <p className="text-black font-medium text-center mt-4 border-2 border-black rounded-xl py-3 px-4">{texts[lang].error}</p>
               )}
             </form>
           </motion.div>

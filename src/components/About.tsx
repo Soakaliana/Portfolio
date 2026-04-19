@@ -16,10 +16,10 @@ Creative, rigorous and attentive, I love turning ideas into concrete, intuitive 
 If you are looking for a professional able to bring your web or mobile projects to life, add real value and take on new challenges, I am ready to collaborate and make your digital vision a reality.`
   }
   return (
-    <section id="about" className="relative py-20 bg-white overflow-hidden">
+    <section id="about" className="relative py-20 bg-cv-muted overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-0"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-0"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-0"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-0"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -32,11 +32,11 @@ If you are looking for a professional able to bring your web or mobile projects 
             className="space-y-8"
           >
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-green-400 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
+              <div className="absolute inset-0 bg-black/10 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="relative w-80 h-80 mx-auto bg-gradient-to-br from-blue-100 to-green-100 rounded-full flex items-center justify-center shadow-2xl border-8 border-blue-300 overflow-hidden"
+                className="relative w-80 h-80 mx-auto bg-white rounded-full flex items-center justify-center shadow-2xl border-8 border-black/15 overflow-hidden"
               >
                 <Image
                   src="/1194HF.png"
@@ -46,7 +46,7 @@ If you are looking for a professional able to bring your web or mobile projects 
                   className="w-full h-full object-cover rounded-full"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/15 to-transparent"></div>
               </motion.div>
             </div>
               <div className="grid grid-cols-3 gap-6">
@@ -54,31 +54,31 @@ If you are looking for a professional able to bring your web or mobile projects 
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center group cursor-pointer"
               >
-                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mb-3 shadow-lg group-hover:shadow-xl transition-all border-2 border-blue-300">
-                  <Music size={28} className="text-blue-600 group-hover:scale-110 transition-transform" />
+                <div className="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-3 shadow-lg group-hover:shadow-xl transition-all border-2 border-black/15">
+                  <Music size={28} className="text-black group-hover:scale-110 transition-transform" />
                 </div>
-                <div className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">Musique</div>
-                <div className="text-sm text-gray-600">Guitare, flûte</div>
+                <div className="text-xl font-bold text-black group-hover:underline transition-colors">Musique</div>
+                <div className="text-sm text-black/55">Guitare, flûte</div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center group cursor-pointer"
               >
-                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mb-3 shadow-lg group-hover:shadow-xl transition-all border-2 border-green-300">
-                  <Heart size={28} className="text-green-500 group-hover:scale-110 transition-transform" />
+                <div className="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-3 shadow-lg group-hover:shadow-xl transition-all border-2 border-black/15">
+                  <Heart size={28} className="text-black group-hover:scale-110 transition-transform" />
                 </div>
-                <div className="text-xl font-bold text-gray-800 group-hover:text-green-600 transition-colors">Basketball</div>
-                <div className="text-sm text-gray-600">Sport</div>
+                <div className="text-xl font-bold text-black group-hover:underline transition-colors">Basketball</div>
+                <div className="text-sm text-black/55">Sport</div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center group cursor-pointer"
               >
-                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mb-3 shadow-lg group-hover:shadow-xl transition-all border-2 border-blue-300">
-                  <Utensils size={28} className="text-blue-600 group-hover:scale-110 transition-transform" />
+                <div className="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-3 shadow-lg group-hover:shadow-xl transition-all border-2 border-black/15">
+                  <Utensils size={28} className="text-black group-hover:scale-110 transition-transform" />
                 </div>
-                <div className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">Cuisine</div>
-                <div className="text-sm text-gray-600">Passion</div>
+                <div className="text-xl font-bold text-black group-hover:underline transition-colors">Cuisine</div>
+                <div className="text-sm text-black/55">Passion</div>
               </motion.div>
             </div>
           </motion.div>
@@ -96,12 +96,12 @@ If you are looking for a professional able to bring your web or mobile projects 
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-5xl font-extrabold text-gray-800 mb-6 relative"
+                className="text-5xl font-extrabold text-black mb-6 relative"
               >
                 <span className="relative">
                   À propos de moi
                   <motion.span
-                    className="absolute -bottom-3 left-0 w-24 h-1 bg-gradient-to-r from-blue-600 to-green-500 rounded-full"
+                    className="absolute -bottom-3 left-0 w-24 h-1 bg-black rounded-full"
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
@@ -115,9 +115,9 @@ If you are looking for a professional able to bring your web or mobile projects 
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-8 shadow-lg border border-blue-100"
+              className="bg-white rounded-2xl p-8 shadow-lg border border-black/10"
             >
-              <p className="text-lg text-gray-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: texts[lang] }} />
+              <p className="text-lg text-black/80 leading-relaxed" dangerouslySetInnerHTML={{ __html: texts[lang] }} />
             </motion.div>
          
            

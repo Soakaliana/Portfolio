@@ -139,7 +139,7 @@ export default function Footer() {
   }
   
   return (
-    <footer className="bg-gray-800 text-white">
+    <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -152,7 +152,7 @@ export default function Footer() {
             className="lg:col-span-1"
           >
             <h3 className="text-2xl font-bold mb-4">{t.brand}</h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-white/70 mb-6">
               {t.desc}
             </p>
             <div className="flex space-x-4">
@@ -168,7 +168,7 @@ export default function Footer() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center text-gray-300 hover:bg-blue-600 hover:text-white transition-colors"
+                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white/80 hover:bg-white hover:text-black transition-colors"
                   aria-label={social.label}
                 >
                   <social.icon size={20} />
@@ -198,7 +198,7 @@ export default function Footer() {
                   >
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-white/70 hover:text-white transition-colors"
                     >
                       {link.name}
                     </a>
@@ -215,7 +215,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="border-t border-gray-700 pt-8 mb-8"
+          className="border-t border-white/15 pt-8 mb-8"
         >
            
         </motion.div>
@@ -226,18 +226,18 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="border-t border-gray-700 pt-8"
+          className="border-t border-white/15 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-2 text-gray-300">
+            <div className="flex items-center space-x-2 text-white/70">
               <span>{t.copyright}</span>
               <span>•</span>
               <span>{t.madeWith}</span>
-              <Heart size={16} className="text-red-500" />
+              <Heart size={16} className="text-white" />
               <span>{t.and}</span>
             </div>
             
-            <div className="flex items-center space-x-6 text-sm text-gray-300">
+            <div className="flex items-center space-x-6 text-sm text-white/70">
               <a href="#" className="hover:text-white transition-colors">
                 {t.privacy}
               </a>
@@ -261,7 +261,7 @@ export default function Footer() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-blue-600 to-green-500 rounded-full shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center text-white z-50"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-white text-black border-2 border-black rounded-full shadow-lg hover:shadow-xl hover:bg-cv-muted transition-all flex items-center justify-center z-50"
         aria-label={t.backToTop}
       >
         <svg

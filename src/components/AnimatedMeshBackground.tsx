@@ -9,8 +9,8 @@ function random(min: number, max: number) {
 
 export default function AnimatedMeshBackground({
   className = '',
-  color = '#818cf8', // bleu-violet
-  lineColor = '#a5b4fc', // bleu clair
+  color = '#000000',
+  lineColor = '#000000',
   opacity = 0.5,
 }: {
   className?: string;

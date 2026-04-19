@@ -76,9 +76,9 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-cv-muted rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-cv-muted rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-cv-muted rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-blob animation-delay-4000"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -89,8 +89,8 @@ export default function Hero() {
             transition={{ duration: 0.8, type: "spring" }}
             className="mb-8"
           >
-            <div className="inline-block p-3 rounded-full bg-gradient-to-r from-blue-100 to-green-100 mb-6 shadow-lg">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-green-500 flex items-center justify-center shadow-xl">
+            <div className="inline-block p-3 rounded-full bg-cv-muted mb-6 shadow-lg border border-black/10">
+              <div className="w-20 h-20 rounded-full bg-black flex items-center justify-center shadow-xl">
                 <span className="text-3xl">👨‍💻</span>
               </div>
             </div>
@@ -100,15 +100,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-gray-800 mb-6 drop-shadow-lg"
+            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-black mb-6 drop-shadow-sm"
           >
             <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-green-500 bg-clip-text text-transparent animate-gradient">
+              <span className="text-black">
                 {displayedName}
               </span>
               {isTyping ? (
                 <motion.span 
-                  className="inline-block text-blue-500 ml-2"
+                  className="inline-block text-black ml-2"
                   animate={{ opacity: [1, 0] }}
                   transition={{ duration: 0.8, repeat: Infinity }}
                 >
@@ -121,12 +121,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl sm:text-3xl text-blue-600 font-bold mb-4 relative"
+            className="text-lg sm:text-xl md:text-2xl text-black/70 font-semibold mb-4 relative tracking-[0.18em] uppercase"
           >
             <span className="relative inline-block">
               {texts[lang].subtitle}
               <motion.span
-                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-green-500 rounded-full"
+                className="absolute -bottom-2 left-0 right-0 h-1 bg-black rounded-full"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
@@ -137,7 +137,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-lg sm:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl text-black/60 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             {texts[lang].description}
           </motion.p>
@@ -152,9 +152,9 @@ export default function Hero() {
               download
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative bg-gradient-to-r from-blue-600 to-green-500 text-white px-10 py-4 rounded-xl font-bold text-lg flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all overflow-hidden"
+              className="group relative bg-black text-white px-10 py-4 rounded-xl font-bold text-lg flex items-center gap-3 shadow-xl hover:shadow-2xl transition-all overflow-hidden hover:bg-black/90"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-green-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+              <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></span>
               <Download size={20} className="relative z-10" />
               <span className="relative z-10">Télécharger CV</span>
               <motion.div
@@ -168,11 +168,11 @@ export default function Hero() {
               href="#contact"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative border-2 border-blue-400 text-gray-700 px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all overflow-hidden backdrop-blur-sm bg-white/50"
+              className="group relative border-2 border-black text-black px-10 py-4 rounded-xl font-bold text-lg hover:bg-cv-muted transition-all overflow-hidden backdrop-blur-sm bg-white"
             >
               <span className="relative z-10">Me contacter</span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-100 to-green-100 opacity-0 group-hover:opacity-100 -z-0"
+                className="absolute inset-0 bg-cv-muted opacity-0 group-hover:opacity-100 -z-0"
                 initial={{ scale: 0 }}
                 whileHover={{ scale: 1 }}
                 transition={{ duration: 0.3 }}
@@ -189,13 +189,7 @@ export default function Hero() {
               const extraProps = social.isExternal
                 ? { target: '_blank', rel: 'noopener noreferrer' }
                 : {}
-              // Icônes avec couleurs SOA
-              const isGithub = social.label === 'GitHub'
-              const iconStyle = isGithub
-                ? { color: '#1e293b' }
-                : social.label === 'Email'
-                ? { color: '#3b82f6' }
-                : { color: '#10b981' }
+              const iconStyle = { color: '#000000' }
               return (
                 <motion.a
                   key={social.label}
@@ -206,12 +200,12 @@ export default function Hero() {
                   transition={{ delay: 0.8 + index * 0.1 }}
                   whileHover={{ scale: 1.15, y: -5 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group relative p-4 rounded-full bg-white/80 backdrop-blur-sm border-2 border-blue-200 shadow-lg hover:shadow-xl transition-all"
+                  className="group relative p-4 rounded-full bg-white backdrop-blur-sm border-2 border-black/15 shadow-lg hover:shadow-xl transition-all hover:border-black"
                   aria-label={social.label}
                 >
                   <social.icon size={28} style={iconStyle} className="relative z-10" />
                   <motion.div
-                    className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-100 to-green-100 opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 rounded-full bg-cv-muted opacity-0 group-hover:opacity-100"
                     initial={{ scale: 0 }}
                     whileHover={{ scale: 1 }}
                     transition={{ duration: 0.3 }}
