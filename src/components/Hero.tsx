@@ -180,7 +180,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
           >
             <motion.a
-              href="/CV%20%20KEVIN%20Annop%20Soraya.pdf"
+              href="/CV%20Annop%20Soraya%20Kevin.pdf"
               download
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
