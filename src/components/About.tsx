@@ -8,15 +8,12 @@ import { useLanguage } from './LanguageProvider'
 export default function About() {
   const { lang } = useLanguage()
   const texts = {
-    fr: `Maîtrisant l’art du développement web et mobile, je suis un développeur Full-stack passionné par l’innovation et la qualité. Que ce soit en freelance, en entreprise ou à l’université, j’ai accompagné des clients et des équipes dans la réalisation de solutions digitales performantes, sur-mesure et sécurisées.<br />
-Créatif, rigoureux et à l’écoute, j’aime transformer les idées en applications concrètes, intuitives et évolutives. Mon expertise couvre l’ensemble du cycle de développement : de la conception à la mise en production, en passant par l’optimisation de l’expérience utilisateur et la sécurité.<br />
-Si vous recherchez un professionnel capable de donner vie à vos projets web ou mobiles, d’apporter une réelle valeur ajoutée et de relever de nouveaux défis, je suis prêt à collaborer pour concrétiser votre vision digitale.`,
-    en: `Mastering the art of web and mobile development, I am a passionate Full-stack developer driven by innovation and quality. Whether as a freelancer, in a company or at university, I have supported clients and teams in delivering high-performance, tailor-made and secure digital solutions.<br />
-Creative, rigorous and attentive, I love turning ideas into concrete, intuitive and scalable applications. My expertise covers the entire development cycle: from design to production, including user experience optimization and security.<br />
-If you are looking for a professional able to bring your web or mobile projects to life, add real value and take on new challenges, I am ready to collaborate and make your digital vision a reality.`
+    fr: `Développeur Full-Stack et créateur de solutions digitales, je conçois des applications web et mobiles modernes, sécurisées et adaptées aux besoins des entreprises. <br />
+    Mon objectif : transformer les idées en produits performants, intuitifs et évolutifs.`,
+    en: `Full-Stack Developer and digital solutions creator, I design modern, secure, and business-oriented web and mobile applications. My goal is to transform ideas into high-performance, intuitive, and scalable products.`
   }
   return (
-    <section id="about" className="relative py-20 bg-cv-muted overflow-hidden">
+    <section id="about" className="relative py-20 bg-gradient-to-b from-accent-light to-cv-muted overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-0"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-0"></div>
@@ -32,11 +29,11 @@ If you are looking for a professional able to bring your web or mobile projects 
             className="space-y-8"
           >
             <div className="relative group">
-              <div className="absolute inset-0 bg-black/10 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+              <div className="absolute inset-0 bg-accent/15 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="relative w-80 h-80 mx-auto bg-white rounded-full flex items-center justify-center shadow-2xl border-8 border-black/15 overflow-hidden"
+                className="relative w-80 h-80 mx-auto bg-white rounded-full flex items-center justify-center shadow-2xl border-8 border-accent/25 overflow-hidden"
               >
                 <Image
                   src="/1194HF.png"
@@ -54,30 +51,30 @@ If you are looking for a professional able to bring your web or mobile projects 
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center group cursor-pointer"
               >
-                <div className="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-3 shadow-lg group-hover:shadow-xl transition-all border-2 border-black/15">
-                  <Music size={28} className="text-black group-hover:scale-110 transition-transform" />
+                <div className="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-3 shadow-lg group-hover:shadow-xl transition-all border-2 border-accent/20 group-hover:border-accent/40">
+                  <Music size={28} className="text-accent group-hover:scale-110 transition-transform" />
                 </div>
-                <div className="text-xl font-bold text-black group-hover:underline transition-colors">Musique</div>
+                <div className="text-xl font-bold text-black group-hover:text-accent group-hover:underline transition-colors">Musique</div>
                 <div className="text-sm text-black/55">Guitare, flûte</div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center group cursor-pointer"
               >
-                <div className="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-3 shadow-lg group-hover:shadow-xl transition-all border-2 border-black/15">
-                  <Heart size={28} className="text-black group-hover:scale-110 transition-transform" />
+                <div className="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-3 shadow-lg group-hover:shadow-xl transition-all border-2 border-accent/20 group-hover:border-accent/40">
+                  <Heart size={28} className="text-accent group-hover:scale-110 transition-transform" />
                 </div>
-                <div className="text-xl font-bold text-black group-hover:underline transition-colors">Basketball</div>
+                <div className="text-xl font-bold text-black group-hover:text-accent group-hover:underline transition-colors">Basketball</div>
                 <div className="text-sm text-black/55">Sport</div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center group cursor-pointer"
               >
-                <div className="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-3 shadow-lg group-hover:shadow-xl transition-all border-2 border-black/15">
-                  <Utensils size={28} className="text-black group-hover:scale-110 transition-transform" />
+                <div className="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-3 shadow-lg group-hover:shadow-xl transition-all border-2 border-accent/20 group-hover:border-accent/40">
+                  <Utensils size={28} className="text-accent group-hover:scale-110 transition-transform" />
                 </div>
-                <div className="text-xl font-bold text-black group-hover:underline transition-colors">Cuisine</div>
+                <div className="text-xl font-bold text-black group-hover:text-accent group-hover:underline transition-colors">Cuisine</div>
                 <div className="text-sm text-black/55">Passion</div>
               </motion.div>
             </div>
@@ -101,7 +98,7 @@ If you are looking for a professional able to bring your web or mobile projects 
                 <span className="relative">
                   À propos de moi
                   <motion.span
-                    className="absolute -bottom-3 left-0 w-24 h-1 bg-black rounded-full"
+                    className="absolute -bottom-3 left-0 w-24 h-1 bg-accent rounded-full"
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}

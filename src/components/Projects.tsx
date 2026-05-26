@@ -161,7 +161,7 @@ export default function Projects() {
             <span className="relative">
               {t.title}
               <motion.span
-                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-black rounded-full"
+                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-accent rounded-full"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -180,7 +180,7 @@ export default function Projects() {
               type="button"
               onClick={() => setView('grid')}
               className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-                view === 'grid' ? 'bg-black text-white' : 'text-black/70 hover:text-black'
+                view === 'grid' ? 'bg-accent text-white' : 'text-black/70 hover:text-accent'
               }`}
             >
               <LayoutGrid size={18} aria-hidden />
@@ -190,7 +190,7 @@ export default function Projects() {
               type="button"
               onClick={() => setView('list')}
               className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-                view === 'list' ? 'bg-black text-white' : 'text-black/70 hover:text-black'
+                view === 'list' ? 'bg-accent text-white' : 'text-black/70 hover:text-accent'
               }`}
             >
               <AlignLeft size={18} aria-hidden />
@@ -220,7 +220,7 @@ export default function Projects() {
                         transition={{ duration: 0.6, delay: index * 0.1, type: 'spring' }}
                         viewport={{ once: true }}
                         whileHover={{ y: -12 }}
-                        className="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all border-2 border-black/10 hover:border-black/25 card-hover"
+                        className="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all border-2 border-black/10 hover:border-accent/40 card-hover"
                       >
                         <div className="absolute inset-0 bg-gradient-to-br from-transparent to-transparent group-hover:from-cv-muted/50 group-hover:to-cv-muted/30 transition-all duration-300 -z-0" />
 
@@ -240,7 +240,7 @@ export default function Projects() {
 
                         <div className="p-8 relative z-10">
                           <div className="flex items-center justify-between mb-4">
-                            <h3 className="text-2xl font-bold text-black group-hover:underline transition-colors">
+                            <h3 className="text-2xl font-bold text-black group-hover:text-accent group-hover:underline transition-colors">
                               {project.title}
                             </h3>
                             <div className="flex space-x-2">
@@ -248,7 +248,7 @@ export default function Projects() {
                                 href={project.github}
                                 whileHover={{ scale: 1.15, rotate: 5 }}
                                 whileTap={{ scale: 0.9 }}
-                                className="p-3 rounded-xl bg-cv-muted text-black hover:bg-black/10 transition-all shadow-md hover:shadow-lg"
+                                className="p-3 rounded-xl bg-cv-muted text-black hover:bg-accent/10 transition-all shadow-md hover:shadow-lg"
                               >
                                 <Github size={18} />
                               </motion.a>
@@ -259,7 +259,7 @@ export default function Projects() {
                                   rel="noopener noreferrer"
                                   whileHover={{ scale: 1.15, rotate: -5 }}
                                   whileTap={{ scale: 0.9 }}
-                                  className="p-3 rounded-xl bg-cv-muted text-black hover:bg-black/15 transition-all shadow-md hover:shadow-lg"
+                                  className="p-3 rounded-xl bg-cv-muted text-black hover:bg-accent/15 transition-all shadow-md hover:shadow-lg"
                                 >
                                   <ExternalLink size={18} />
                                 </motion.a>
@@ -297,7 +297,7 @@ export default function Projects() {
                       transition={{ duration: 0.6, delay: index * 0.1, type: 'spring' }}
                       viewport={{ once: true }}
                       whileHover={{ y: -8 }}
-                      className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border-2 border-black/10 hover:border-black/25 card-hover relative"
+                      className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border-2 border-black/10 hover:border-accent/40 card-hover relative"
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-transparent to-transparent group-hover:from-cv-muted/50 group-hover:to-cv-muted/30 transition-all duration-300 -z-0" />
                       <div className="relative h-48 bg-gradient-to-br from-cv-muted to-white flex items-center justify-center overflow-hidden">
@@ -316,7 +316,7 @@ export default function Projects() {
 
                       <div className="p-6 relative z-10">
                         <div className="flex items-center justify-between mb-3">
-                          <h3 className="text-lg font-bold text-black group-hover:underline transition-colors flex-1">
+                          <h3 className="text-lg font-bold text-black group-hover:text-accent group-hover:underline transition-colors flex-1">
                             {project.title}
                           </h3>
                           <div className="flex space-x-2">
@@ -324,7 +324,7 @@ export default function Projects() {
                               href={project.github}
                               whileHover={{ scale: 1.2, rotate: 5 }}
                               whileTap={{ scale: 0.9 }}
-                              className="p-2 rounded-lg bg-cv-muted text-black hover:bg-black/10 transition-all shadow-sm"
+                              className="p-2 rounded-lg bg-cv-muted text-black hover:bg-accent/10 transition-all shadow-sm"
                             >
                               <Github size={16} />
                             </motion.a>
@@ -336,7 +336,7 @@ export default function Projects() {
                               }}
                               whileHover={{ scale: 1.2, rotate: -5 }}
                               whileTap={{ scale: 0.9 }}
-                              className="p-2 rounded-lg bg-cv-muted text-black hover:bg-black/10 transition-all shadow-sm"
+                              className="p-2 rounded-lg bg-cv-muted text-black hover:bg-accent/10 transition-all shadow-sm"
                               aria-label={t.detail}
                             >
                               <Expand size={16} />
@@ -348,7 +348,7 @@ export default function Projects() {
                                 rel="noopener noreferrer"
                                 whileHover={{ scale: 1.15 }}
                                 whileTap={{ scale: 0.9 }}
-                                className="px-3 py-2 rounded-lg bg-black text-white hover:bg-black/90 transition-all font-bold text-xs shadow-md"
+                                className="px-3 py-2 rounded-lg bg-accent text-white hover:bg-accent/90 transition-all font-bold text-xs shadow-md"
                                 aria-label="Voir la démo du projet"
                               >
                                 Demo
@@ -410,7 +410,7 @@ export default function Projects() {
                   <div className="flex min-w-0 flex-1 flex-col justify-center">
                     <div className="mb-2 flex flex-wrap items-center gap-2">
                       {project.featured && (
-                        <span className="rounded-full border border-black bg-black px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+                        <span className="rounded-full border border-accent bg-accent px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
                           {t.highlight}
                         </span>
                       )}
@@ -436,7 +436,7 @@ export default function Projects() {
                         href={project.github}
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.97 }}
-                        className="inline-flex items-center gap-2 rounded-lg border-2 border-black bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-cv-muted"
+                        className="inline-flex items-center gap-2 rounded-lg border-2 border-accent bg-white px-4 py-2 text-sm font-semibold text-accent hover:bg-accent-light"
                       >
                         <Github size={16} />
                         {t.github}
@@ -458,7 +458,7 @@ export default function Projects() {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.03 }}
                           whileTap={{ scale: 0.97 }}
-                          className="inline-flex items-center gap-2 rounded-lg bg-black px-4 py-2 text-sm font-semibold text-white hover:bg-black/90"
+                          className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white hover:bg-accent/90"
                         >
                           <ExternalLink size={16} />
                           {t.demo}
@@ -483,7 +483,7 @@ export default function Projects() {
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative bg-black text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all overflow-hidden"
+              className="group relative bg-accent text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all overflow-hidden"
               onClick={() => {
                 const el = document.getElementById('all-projects')
                 if (el) el.scrollIntoView({ behavior: 'smooth' })

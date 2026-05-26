@@ -79,7 +79,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-cv-muted to-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-accent-light via-cv-muted to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -92,7 +92,7 @@ export default function Contact() {
           <h2 className="text-4xl font-extrabold text-black mb-4">
             {texts[lang].title}
           </h2>
-          <div className="w-24 h-1 bg-black rounded-full mx-auto mb-6 shadow-lg"></div>
+          <div className="w-24 h-1 bg-accent rounded-full mx-auto mb-6 shadow-lg"></div>
           <p className="text-lg text-black/60 max-w-2xl mx-auto">
             {texts[lang].desc}
           </p>
@@ -129,7 +129,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center space-x-4"
                 >
-                  <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center shadow-lg">
                     <info.icon size={28} className="text-white" />
                   </div>
                   <div>
@@ -190,7 +190,7 @@ export default function Contact() {
                     id="firstName"
                     name="firstName"
                     required
-                    className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-black focus:outline-none transition-all shadow-sm"
+                    className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-accent focus:outline-none transition-all shadow-sm"
                     placeholder={texts[lang].placeholderFirstName}
                   />
                 </div>
@@ -203,7 +203,7 @@ export default function Contact() {
                     id="lastName"
                     name="lastName"
                     required
-                    className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-black focus:outline-none transition-all shadow-sm"
+                    className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-accent focus:outline-none transition-all shadow-sm"
                     placeholder={texts[lang].placeholderLastName}
                   />
                 </div>
@@ -217,7 +217,7 @@ export default function Contact() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-black focus:outline-none transition-all shadow-sm"
+                  className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-accent focus:outline-none transition-all shadow-sm"
                   placeholder={texts[lang].placeholderEmail}
                 />
               </div>
@@ -230,7 +230,7 @@ export default function Contact() {
                   id="subject"
                   name="subject"
                   required
-                  className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-black focus:outline-none transition-all shadow-sm"
+                  className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-accent focus:outline-none transition-all shadow-sm"
                   placeholder={texts[lang].placeholderSubject}
                 />
               </div>
@@ -243,22 +243,22 @@ export default function Contact() {
                   name="message"
                   rows={5}
                   required
-                  className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-black focus:outline-none transition-all shadow-sm"
+                  className="w-full px-5 py-3 border border-black/15 rounded-2xl bg-cv-muted text-black placeholder-black/35 focus:ring-2 focus:ring-accent focus:outline-none transition-all shadow-sm"
                   placeholder={texts[lang].placeholderMessage}
                 />
               </div>
               <button
                 type="submit"
-                className="w-full py-4 px-8 bg-black text-white rounded-2xl font-semibold text-lg shadow-lg hover:bg-black/90 transition-all"
+                className="w-full py-4 px-8 bg-accent text-white rounded-2xl font-semibold text-lg shadow-lg hover:bg-accent/90 transition-all"
                 disabled={status === 'sending'}
               >
                 {status === 'sending' ? texts[lang].sending : texts[lang].send}
               </button>
               {status === 'success' && (
-                <p className="text-black font-medium text-center mt-4 border border-black/15 rounded-xl py-3 px-4 bg-cv-muted">{texts[lang].success}</p>
+                <p className="text-accent font-medium text-center mt-4 border border-accent/25 rounded-xl py-3 px-4 bg-accent-light">{texts[lang].success}</p>
               )}
               {status === 'error' && (
-                <p className="text-black font-medium text-center mt-4 border-2 border-black rounded-xl py-3 px-4">{texts[lang].error}</p>
+                <p className="text-accent font-medium text-center mt-4 border-2 border-accent rounded-xl py-3 px-4">{texts[lang].error}</p>
               )}
             </form>
           </motion.div>

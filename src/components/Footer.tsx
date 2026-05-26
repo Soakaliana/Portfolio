@@ -133,13 +133,13 @@ export default function Footer() {
       }
     ],
     social: [
-      { icon: Github, href: 'https://github.com/omis246', label: 'GitHub' },
+      { icon: Github, href: 'https://github.com/Soakaliana', label: 'GitHub' },
       { icon: Mail, href: 'mailto:kevinannopsoraya@gmail.com', label: 'Email' },
     ]
   }
   
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-neutral-900 text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -151,7 +151,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="lg:col-span-1"
           >
-            <h3 className="text-2xl font-bold mb-4">{t.brand}</h3>
+            <h3 className="text-2xl font-bold mb-4 text-white">{t.brand}</h3>
             <p className="text-white/70 mb-6">
               {t.desc}
             </p>
@@ -168,7 +168,7 @@ export default function Footer() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white/80 hover:bg-white hover:text-black transition-colors"
+                  className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-white/70 hover:bg-white/10 hover:text-accent transition-colors border border-white/10"
                   aria-label={social.label}
                 >
                   <social.icon size={20} />
@@ -198,7 +198,7 @@ export default function Footer() {
                   >
                     <a
                       href={link.href}
-                      className="text-white/70 hover:text-white transition-colors"
+                      className="text-white/60 hover:text-accent transition-colors"
                     >
                       {link.name}
                     </a>
@@ -233,18 +233,18 @@ export default function Footer() {
               <span>{t.copyright}</span>
               <span>•</span>
               <span>{t.madeWith}</span>
-              <Heart size={16} className="text-white" />
+              <Heart size={16} className="text-accent" />
               <span>{t.and}</span>
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-white/70">
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-accent transition-colors">
                 {t.privacy}
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-accent transition-colors">
                 {t.terms}
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-accent transition-colors">
                 {t.legal}
               </a>
             </div>
@@ -261,7 +261,7 @@ export default function Footer() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-white text-black border-2 border-black rounded-full shadow-lg hover:shadow-xl hover:bg-cv-muted transition-all flex items-center justify-center z-50"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-white text-neutral-900 border border-white/20 rounded-full shadow-lg hover:shadow-xl hover:bg-neutral-100 transition-all flex items-center justify-center z-50"
         aria-label={t.backToTop}
       >
         <svg

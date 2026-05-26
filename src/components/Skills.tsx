@@ -180,7 +180,7 @@ export default function Skills() {
   const t = texts[lang]
 
   return (
-    <section id="skills" className="relative py-20 bg-gradient-to-b from-cv-muted to-white overflow-hidden">
+    <section id="skills" className="relative py-20 bg-gradient-to-b from-cv-muted via-accent-light to-white overflow-hidden">
       <div className="absolute top-20 right-0 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -201,7 +201,7 @@ export default function Skills() {
             <span className="relative">
               {t.title}
               <motion.span
-                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-black rounded-full"
+                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-accent rounded-full"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -220,7 +220,7 @@ export default function Skills() {
               type="button"
               onClick={() => setView('list')}
               className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-                view === 'list' ? 'bg-black text-white' : 'text-black/70 hover:text-black'
+                view === 'list' ? 'bg-accent text-white' : 'text-black/70 hover:text-accent'
               }`}
             >
               <LayoutList size={18} aria-hidden />
@@ -230,7 +230,7 @@ export default function Skills() {
               type="button"
               onClick={() => setView('cloud')}
               className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-                view === 'cloud' ? 'bg-black text-white' : 'text-black/70 hover:text-black'
+                view === 'cloud' ? 'bg-accent text-white' : 'text-black/70 hover:text-accent'
               }`}
             >
               <Cloud size={18} aria-hidden />
@@ -260,14 +260,14 @@ export default function Skills() {
                     className="border-b border-black/10 last:border-b-0 px-6 sm:px-10 py-9 sm:py-10"
                   >
                     <header className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-6">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center border-2 border-black bg-black text-white">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center border-2 border-accent bg-accent text-white">
                         <category.icon size={22} strokeWidth={2} />
                       </div>
                       <div className="min-w-0 flex-1">
                         <h3 className="text-base font-bold uppercase tracking-[0.14em] text-black">
                           {category.title}
                         </h3>
-                        <div className="mt-2 h-1 w-16 bg-black" />
+                        <div className="mt-2 h-1 w-16 bg-accent" />
                       </div>
                     </header>
 
